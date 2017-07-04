@@ -12,8 +12,6 @@ use base qw(Module::Patch);
 
 use Config::IOD::Reader;
 
-our %config;
-
 my $p_search_module = sub {
     my $ctx = shift;
     my $orig = $ctx->{orig};
