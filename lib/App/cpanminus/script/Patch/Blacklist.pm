@@ -70,7 +70,7 @@ In F<~/cpanm-blacklist.conf>:
 
 In the command-line:
 
- % PERL5OPT=-MModule::Load::In::INIT=App::cpanminus::script::Patch::Blacklist cpanm ...
+ % perl -MModule::Load::In::INIT=App::cpanminus::script::Patch::Blacklist `which cpanm` ...
 
 
 =head1 DESCRIPTION
