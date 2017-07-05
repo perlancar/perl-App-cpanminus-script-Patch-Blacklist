@@ -18,11 +18,8 @@ my $p_search_module = sub {
     my $res = $orig->(@_);
     return $res unless $res;
 
-    unless ($App::cpanminus::script::Blacklist) {
-        $App::cpanminus::script::Blacklist =
-            Config::IOD::Reader->new->read_file(
-                $ENV{HOME} . "/cpanm-blacklist.conf");
-    }
+    $App::cpanminus::script::Blacklist //= Config::IOD::Reader->new->read_file(
+        $ENV{HOME} . "/cpanm-blacklist.conf");
 
     my $module_bl = $App::cpanminus::script::Blacklist->{GLOBAL}{module} // [];
     $module_bl = [$module_bl] unless ref $module_bl eq 'ARRAY';
