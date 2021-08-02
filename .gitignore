@@ -2,3 +2,4 @@ App-cpanminus-script-Patch-Blacklist-*
 .build
 *~
 nytprof*
+.DS_Store
